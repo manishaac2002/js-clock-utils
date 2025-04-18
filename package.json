@@ -1,0 +1,18 @@
+{
+  "name": "js-clock-utils",
+  "version": "1.0.1",
+  "description": "A simple JavaScript clock utility to get the current time in HH:MM:SS format.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "clock",
+    "time",
+    "jsclock",
+    "date",
+    "utility"
+  ],
+  "author": "Manisha A C",
+  "license": "MIT"
+}
