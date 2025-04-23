@@ -17,7 +17,10 @@ A lightweight JavaScript utility library for working with clocks, time formattin
 
 ```bash
 npm install js-clock-utils
+```
 
+## 🚀 Usage
+```bash
 import clockUtils from 'js-clock-utils';
 
 // Get current time
@@ -31,6 +34,20 @@ console.log(clockUtils.getCurrentTimestamp()); // "2025-04-22T11:05:23.456Z"
 
 // Get relative time
 console.log(clockUtils.getTimeAgo('2025-04-22T10:00:00Z')); // "1 hour ago"
+```
 
-📄 License
- MIT License
+---
+
+## 👩‍💻 Author
+One tick at a time ⌚ — handcrafted ❤️ by Manisha
+
+---
+
+## 📄 License
+MIT License
+
+---
+
+## 💬 Friendly
+💡 Curious for more? Check out what I’m building on GitHub https://github.com/manishaac2002!
+

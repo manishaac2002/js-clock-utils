@@ -1,6 +1,6 @@
 {
   "name": "js-clock-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple JavaScript clock utility to get the current time in HH:MM:SS format.",
   "main": "index.js",
   "type": "module",
