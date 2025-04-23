@@ -57,25 +57,42 @@ const getCurrentTimestamp = () => {
 
 
 /**
- * Returns a human-readable relative time string (e.g., "5 minutes ago") 
+ * Returns a human-readable relative time string (e.g., "5 minutes ago")
  * based on the difference between the current time and the provided date.
+ * Handles past and future dates.
  *
- * @param {string | number | Date} date - The past date to compare (can be a Date object, timestamp, or date string).
- * @returns {string} A string indicating how long ago the date was.
+ * @function
+ * @param {string | number | Date} date - The date to compare (can be a Date object, timestamp, or date string).
+ * @returns {string} A string indicating how long ago the date was, or "in the future" if the date is ahead,
+ * or "Invalid date" for an invalid input.
+ *
+ * @example
+ * getTimeAgo("2025-04-23T10:00:00Z"); // "3 hours ago" (if current time is 13:00 UTC)
+ * getTimeAgo(Date.now() - 1000 * 60 * 60); // "1 hour ago"
+ * getTimeAgo(Date.now() + 10000); // "in the future"
+ * getTimeAgo("invalid"); // "Invalid date"
  */
 const getTimeAgo = (date) => {
   const now = new Date();
   const past = new Date(date);
+
+  if (isNaN(past.getTime())) return "Invalid date";
+
   const diffInSeconds = Math.floor((now - past) / 1000);
 
+  if (diffInSeconds < 0) return "in the future";
   if (diffInSeconds < 60) return `${diffInSeconds} seconds ago`;
+
   const diffInMinutes = Math.floor(diffInSeconds / 60);
   if (diffInMinutes < 60) return `${diffInMinutes} minutes ago`;
+
   const diffInHours = Math.floor(diffInMinutes / 60);
   if (diffInHours < 24) return `${diffInHours} hours ago`;
+
   const diffInDays = Math.floor(diffInHours / 24);
   return `${diffInDays} days ago`;
 };
+
 
 
 

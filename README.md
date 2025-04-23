@@ -1,13 +1,36 @@
-# js-clock-utils
+# 🕒 js-clock-utils
 
-A simple npm package to get the current time.
+A lightweight JavaScript utility library for working with clocks, time formatting, and relative timestamps. Designed for use in web apps, Node.js scripts, and anywhere you need simple time utilities.
 
-## Installation
+---
+
+## ✨ Features
+
+- ⏰ Get the current time in `HH:MM:SS` format
+- 🕗 Calculate time difference between two hours
+- 📅 Fetch the current timestamp in ISO 8601 format
+- 🧭 Display how long ago a date was ("5 minutes ago", etc.)
+
+---
+
+## 📦 Installation
+
 ```bash
-npm install jsclock
+npm install js-clock-utils
 
+import clockUtils from 'js-clock-utils';
 
-# Useage
-# const { getCurrentTime } = require('jsclock');
+// Get current time
+console.log(clockUtils.getCurrentTime()); // "14:05:09"
 
-# console.log(getCurrentTime()); // Outputs something like "14:23:45"
+// Get difference in hours
+console.log(clockUtils.getTimeDifferenceBetween(5, 8)); // "3 hrs"
+
+// Get current ISO timestamp
+console.log(clockUtils.getCurrentTimestamp()); // "2025-04-22T11:05:23.456Z"
+
+// Get relative time
+console.log(clockUtils.getTimeAgo('2025-04-22T10:00:00Z')); // "1 hour ago"
+
+📄 License
+ MIT License
